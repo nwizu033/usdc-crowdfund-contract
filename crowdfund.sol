@@ -47,6 +47,7 @@ contract usdcCrowdfund {
     // How an individual campaign is structured
     struct Campaign {
         address payable Owner;
+        uint256 CampaignNo;
         string Title;
         string Purpose;
         uint256 Target;
@@ -83,6 +84,7 @@ contract usdcCrowdfund {
         // update the campaign at this id with the the campaign structure
         campaigns[id] = Campaign({
             Owner: payable(msg.sender),
+            CampaignNo: id,
             Title: _title,
             Purpose: _purpose,
             Target: target,
